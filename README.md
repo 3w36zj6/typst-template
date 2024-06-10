@@ -24,3 +24,9 @@ https://github.com/nvarner/typst-lsp
 
 - [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp)
 - [Open VSX](https://open-vsx.org/extension/nvarner/typst-lsp)
+
+## Templates
+
+### Article
+
+[原ノ味フォント](https://github.com/trueroad/HaranoAjiFonts)と[白源](https://github.com/yuru7/HackGen)のNerd Fonts合成版が必要です。
