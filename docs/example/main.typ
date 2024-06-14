@@ -4,7 +4,8 @@
   subtitle: "サブタイトル",
   author: "著者",
   date: "1234/56/78",
-  bib: bibliography("references.bib", title: "参考文献", style: "ieee")
+  paginate: true,
+  bib: bibliography("references.bib", title: "参考文献", style: "ieee"),
 )
 
 = Writing in Typst
@@ -49,30 +50,30 @@
 #figure(
   [
   ```typst
-  #set page(width: 10cm, height: auto)
-  #set heading(numbering: "1.")
+    #set page(width: 10cm, height: auto)
+    #set heading(numbering: "1.")
 
-  = Fibonacci sequence
-  The Fibonacci sequence is defined through the recurrence relation $F_n = F_(n-1) + F_(n-2)$.
-  It can also be expressed in _closed form:_
+    = Fibonacci sequence
+    The Fibonacci sequence is defined through the recurrence relation $F_n = F_(n-1) + F_(n-2)$.
+    It can also be expressed in _closed form:_
 
-  $ F_n = round(1 / sqrt(5) phi.alt^n), quad
-  phi.alt = (1 + sqrt(5)) / 2 $
+    $ F_n = round(1 / sqrt(5) phi.alt^n), quad
+    phi.alt = (1 + sqrt(5)) / 2 $
 
-  #let count = 8
-  #let nums = range(1, count + 1)
-  #let fib(n) = (if n <= 2 { 1 } else { fib(n - 1) + fib(n - 2) })
+    #let count = 8
+    #let nums = range(1, count + 1)
+    #let fib(n) = (if n <= 2 { 1 } else { fib(n - 1) + fib(n - 2) })
 
-  The first #count numbers of the sequence are:
+    The first #count numbers of the sequence are:
 
-  #align(
-    center,
-    table(columns: count, ..nums.map(n => $F_#n$), ..nums.map(n => str(fib(n)))),
-  )
+    #align(
+      center,
+      table(columns: count, ..nums.map(n => $F_#n$), ..nums.map(n => str(fib(n)))),
+    )
 
-  ```
+    ```
   ],
-  caption: "Fibonacci数列を計算するコード"
+  caption: "Fibonacci数列を計算するコード",
 ) <fibonacci-code>
 
 == Adding a bibliography

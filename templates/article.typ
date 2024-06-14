@@ -8,6 +8,7 @@
   subtitle: none,
   author: none,
   date: none,
+  paginate: true,
   bib: none,
   body,
 ) = {
@@ -21,7 +22,17 @@
   show raw: set text(font: font-monospace)
 
   // ページの設定
-  set page(paper: "a4", margin: (x: 2.5cm, y: 2.8cm))
+  set page(
+    paper: "a4",
+    margin: (x: 2.5cm, top: 2.8cm, bottom: 2.65cm),
+    footer: if (paginate) {
+      [
+        #set align(center)
+        #set text(12pt)
+        #counter(page).display("1")
+      ]
+    } else { none },
+  )
 
   // 数式の設定
   set math.equation(numbering: "(1)")
