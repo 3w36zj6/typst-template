@@ -52,17 +52,23 @@
   set list(indent: 1.5em)
 
   // 見出しの設定
-  set heading(numbering: "1.")
+  set heading(
+    numbering: (..nums) => {
+      let level = nums.pos().len()
+      let text-size = if level == 1 { 16pt } else if level == 2 { 13pt } else { 11pt }
+      // e.g. "1.1.1"
+      text(font: font-sans-serif, size: text-size, nums.pos().map(str).join("."))
+      h(1em, weak: true)
+    },
+  )
   show heading: set text(font: font-sans-serif, weight: "medium")
-  show heading.where(level: 1): it => {
-    set text(size: 16pt)
-    pad(top: 0.4em, bottom: 0.3em, left: 0em)[
-      #it
-    ]
-  }
-  show heading.where(level: 2): it => {
-    set text(size: 13pt)
-    pad(top: 0.4em, bottom: 0.3em)[
+
+  show heading: it => {
+    pad(
+      top: if (it.level in (1, 2)) { 0.4em } else { 0em },
+      bottom: if (it.level in (1, 2)) { 0.3em } else { 0em },
+      left: 0em, // NOTE: 参考文献の見出しの位置がずれるのを防ぐため
+    )[
       #it
     ]
   }
