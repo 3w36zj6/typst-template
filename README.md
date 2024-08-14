@@ -18,12 +18,12 @@ https://github.com/astrale-sharp/typstfmt
 cargo install --git https://github.com/astrale-sharp/typstfmt.git
 ```
 
-### Typst LSP
+### Tinymist
 
-https://github.com/nvarner/typst-lsp
+https://github.com/Myriad-Dreamin/tinymist
 
-- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=nvarner.typst-lsp)
-- [Open VSX](https://open-vsx.org/extension/nvarner/typst-lsp)
+- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=myriad-dreamin.tinymist)
+- [Open VSX](https://open-vsx.org/extension/myriad-dreamin/tinymist)
 
 ## Templates
 
