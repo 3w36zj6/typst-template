@@ -31,7 +31,9 @@
         #set text(12pt)
         #counter(page).display("1")
       ]
-    } else { none },
+    } else {
+      none
+    },
   )
 
   // 数式の設定
@@ -42,7 +44,13 @@
   show table.cell.where(y: 0): strong
   set table(stroke: (x, y) => (
     x: 0pt,
-    top: if y == 0 { 1pt } else if y == 1 { 0.5pt } else { 0pt },
+    top: if y == 0 {
+      1pt
+    } else if y == 1 {
+      0.5pt
+    } else {
+      0pt
+    },
     bottom: 1pt,
   ))
   show figure.where(kind: table): set figure.caption(position: top)
@@ -52,15 +60,19 @@
   set list(indent: 1.5em)
 
   // 見出しの設定
-  set heading(
-    numbering: (..nums) => {
-      let level = nums.pos().len()
-      let text-size = if level == 1 { 16pt } else if level == 2 { 13pt } else { 11pt }
-      // e.g. "1.1.1"
-      text(font: font-sans-serif, size: text-size, nums.pos().map(str).join("."))
-      h(1em, weak: true)
-    },
-  )
+  set heading(numbering: (..nums) => {
+    let level = nums.pos().len()
+    let text-size = if level == 1 {
+      16pt
+    } else if level == 2 {
+      13pt
+    } else {
+      11pt
+    }
+    // e.g. "1.1.1"
+    text(font: font-sans-serif, size: text-size, nums.pos().map(str).join("."))
+    h(1em, weak: true)
+  })
   show heading: set text(font: font-sans-serif, weight: "medium")
 
   show heading: it => {

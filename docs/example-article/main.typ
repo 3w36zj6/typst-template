@@ -30,18 +30,21 @@
 
 @critical-temperatures に示されるように、さまざまな物質は異なる臨界温度を持ちます。
 
-#figure(table(
-  columns: 3,
-  table.header([Substance], [Subcritical °C], [Supercritical °C]),
-  [Hydrochloric Acid],
-  [12.0],
-  [92.1],
-  [Sodium Myreth Sulfate],
-  [16.6],
-  [104],
-  [Potassium Hydroxide],
-  table.cell(colspan: 2)[24.7],
-), caption: "さまざまな物質の臨界温度") <critical-temperatures>
+#figure(
+  table(
+    columns: 3,
+    table.header([Substance], [Subcritical °C], [Supercritical °C]),
+    [Hydrochloric Acid],
+    [12.0],
+    [92.1],
+    [Sodium Myreth Sulfate],
+    [16.6],
+    [104],
+    [Potassium Hydroxide],
+    table.cell(colspan: 2)[24.7],
+  ),
+  caption: "さまざまな物質の臨界温度",
+) <critical-temperatures>
 
 === Code
 
@@ -49,29 +52,29 @@
 
 #figure(
   [
-  ```typst
-          #set page(width: 10cm, height: auto)
-          #set heading(numbering: "1.")
+    ```typst
+    #set page(width: 10cm, height: auto)
+    #set heading(numbering: "1.")
 
-          = Fibonacci sequence
-          The Fibonacci sequence is defined through the recurrence relation $F_n = F_(n-1) + F_(n-2)$.
-          It can also be expressed in _closed form:_
+    = Fibonacci sequence
+    The Fibonacci sequence is defined through the recurrence relation $F_n = F_(n-1) + F_(n-2)$.
+    It can also be expressed in _closed form:_
 
-          $ F_n = round(1 / sqrt(5) phi.alt^n), quad
-          phi.alt = (1 + sqrt(5)) / 2 $
+    $ F_n = round(1 / sqrt(5) phi.alt^n), quad
+    phi.alt = (1 + sqrt(5)) / 2 $
 
-          #let count = 8
-          #let nums = range(1, count + 1)
-          #let fib(n) = (if n <= 2 { 1 } else { fib(n - 1) + fib(n - 2) })
+    #let count = 8
+    #let nums = range(1, count + 1)
+    #let fib(n) = (if n <= 2 { 1 } else { fib(n - 1) + fib(n - 2) })
 
-          The first #count numbers of the sequence are:
+    The first #count numbers of the sequence are:
 
-          #align(
-            center,
-            table(columns: count, ..nums.map(n => $F_#n$), ..nums.map(n => str(fib(n)))),
-          )
+    #align(
+      center,
+      table(columns: count, ..nums.map(n => $F_#n$), ..nums.map(n => str(fib(n)))),
+    )
 
-          ```
+    ```
   ],
   caption: "Fibonacci数列を計算するコード",
 ) <fibonacci-code>
@@ -86,9 +89,11 @@
 
 氷河の流れによって移動した土壌の総量は @total-displaced-soil のように計算されます。
 
-$ 7.32 beta +
-sum_(i=0)^nabla
-(Q_i (a_i - epsilon)) / 2 $ <total-displaced-soil>
+$
+  7.32 beta +
+  sum_(i=0)^nabla
+  (Q_i (a_i - epsilon)) / 2
+$ <total-displaced-soil>
 
 == Adding a footnote
 
