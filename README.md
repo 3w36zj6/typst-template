@@ -10,12 +10,12 @@ https://github.com/typst/typst
 cargo install --git https://github.com/typst/typst --locked typst-cli --tag v0.11.0
 ```
 
-### typstfmt
+### typstyle
 
-https://github.com/astrale-sharp/typstfmt
+https://github.com/Enter-tainer/typstyle
 
 ```sh
-cargo install --git https://github.com/astrale-sharp/typstfmt.git
+cargo install typstyle
 ```
 
 ### Tinymist
